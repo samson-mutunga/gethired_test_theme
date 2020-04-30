@@ -97,7 +97,38 @@ header .top-right-nav a {
 header .top-right-nav a:last-child {
     padding-right: 0;
 }
-
+.dropdown-menu {
+    box-shadow: 0 1rem 3rem rgba(0,0,0,.175);
+    border: none;
+    padding: 0;
+    border-radius: 0;
+}
+.dropdown-menu a {
+    padding: 12px 15px 5px 15px;
+    font-size: 14px !important;
+    cursor: pointer;
+}
+.dropdown-item.active, .dropdown-item:active {
+    background-color: var(--primary-color);
+    color: #fff !important;
+}
+.user-options .dropdown-menu a {
+    display: block !important;
+    width: 100%;
+}
+.user-options .dropdown-toggle {
+    cursor: pointer;
+    padding: 10px 0;
+}
+.user-options .dropdown-toggle::after {
+    vertical-align: 1px;
+}
+.user-options .dropdown-toggle img {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    margin-right: 10px;
+}
 .help-center-section {
     min-height: 620px;
     background: transparent;

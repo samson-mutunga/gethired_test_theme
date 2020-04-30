@@ -10,7 +10,38 @@
         <div class="col-md-6 col-8">
           <div class="top-right-nav">
             <a href="{{ link 'community' }}">Community</a>
-            <a href="" class="btn btn-primary btn-sm rounded-25 px-4">Login</a>
+            {{#if signed_in}}
+
+            <!--User options -->
+            <div class="d-inline dropdown user-options">
+              <div class="d-inline dropdown-toggle" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true"
+                aria-expanded="false">
+                <img src="{{ asset 'maria.jpg' }}" />
+                <span class="font-weight-bold">Samson</span>
+              </div>
+              <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                {{#link "my_activities" role="menuitem"}}
+                <i class="fas fa-clipboard-list mr-2"></i> My Activities
+                {{/link}}
+                {{#link "my_profile" role="menuitem"}}
+                <i class="far fa-user mr-2"></i> My Profile
+                {{/link}}
+                {{#link "change_password" role="menuitem"}}
+                <i class="fas fa-key mr-2"></i> Change Password
+                {{/link}}
+                {{#link "sign_out" role="menuitem"}}
+                <i class="fas fa-sign-out-alt mr-2"></i> Sign Out
+                {{/link}}
+
+              </div>
+            </div>
+            <!--User options -->
+
+            {{else}}
+            {{#link "sign_in" class="sign-in btn btn-primary btn-sm rounded-25 px-4"}}
+            Login
+            {{/link}}
+            {{/if}}
           </div>
         </div>
       </div>
